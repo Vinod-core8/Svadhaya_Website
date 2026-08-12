@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svadhyaya Institute of Learning — Grade 11 Accountancy, CBSE</title>
+<meta name="description" content="Live online coaching for Grade 11 CBSE Accountancy with Shweta Iyengar, CA · CFA · CISI. Small live batches, one-on-one pre-batch meeting, ₹6,500/month.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#102a54;
+    --navy-deep:#0a1c3a;
+    --navy-soft:#48628c;
+    --white:#ffffff;
+    --offwhite:#f5f8fc;
+    --tint:#e9eff9;
+    --line:rgba(16,42,84,0.13);
+    --shadow:0 24px 50px rgba(16,42,84,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html, body{overflow-x:hidden; max-width:100%;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Inter', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--navy); color:var(--white);}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+  @media (max-width:720px){ .wrap{padding:0 22px;} }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--navy);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--navy-soft);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:20px;height:2px;
+    background:var(--navy);
+    display:inline-block;
+  }
+
+  /* ---------------- HEADER ---------------- */
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    z-index:50;
+  }
+  .masthead{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand .glyph{
+    width:34px; height:34px;
+    border:1.5px solid var(--navy);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:16px;
+  }
+  .brand .name{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+  }
+  .brand .name span{color:var(--navy-soft); font-weight:500;}
+  nav{display:flex; align-items:center; gap:22px;}
+  nav .links{display:flex; gap:28px; font-size:14.5px; font-weight:500;}
+  nav a.navlink{
+    text-decoration:none;
+    color:var(--navy-soft);
+    transition:color .2s;
+  }
+  nav a.navlink:hover{color:var(--navy);}
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:36px;
+    height:36px;
+    padding:0;
+    background:none;
+    border:1.5px solid var(--navy);
+    border-radius:8px;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    width:16px;
+    height:2px;
+    background:var(--navy);
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.active span:nth-child(2){opacity:0;}
+  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .mobile-menu.open{max-height:400px;}
+  .mobile-menu .mobile-link{
+    padding:14px 2px;
+    font-size:15.5px;
+    font-weight:500;
+    color:var(--navy-soft);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .mobile-link:hover{color:var(--navy);}
+  .mobile-menu .btn{margin:16px 0 4px; justify-content:center; width:100%;}
+
+  @media (max-width:800px){
+    nav .links{display:none;}
+    .hamburger{display:flex;}
+    .mobile-menu{display:flex;}
+    .cta-enquire{display:none;}
+  }
+
+  /* ---------------- BUTTONS (single colour) ---------------- */
+  .btn{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    text-decoration:none;
+    padding:13px 24px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border-radius:6px;
+    transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    border:1.5px solid var(--navy);
+    cursor:pointer;
+  }
+  .btn-primary{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--navy);
+  }
+  .btn-ghost:hover{background:var(--navy); color:var(--white);}
+
+  /* ---------------- HERO ---------------- */
+  .hero{
+    padding:76px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-eq{
+    position:absolute;
+    right:-40px;
+    top:-40px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:min(46vw,560px);
+    color:var(--tint);
+    line-height:1;
+    z-index:0;
+    pointer-events:none;
+    user-select:none;
+  }
+  .hero-outer{
+    display:grid;
+    grid-template-columns:1.25fr 1fr;
+    gap:56px;
+    align-items:start;
+    position:relative;
+    z-index:1;
+  }
+  @media (max-width:920px){ .hero-outer{grid-template-columns:1fr; gap:44px;} }
+
+  .hero h1{
+    font-size:clamp(34px,4.6vw,56px);
+    line-height:1.08;
+    max-width:14ch;
+    margin-top:18px;
+  }
+  .hero h1 .u{
+    text-decoration:underline;
+    text-decoration-color:var(--tint);
+    text-decoration-thickness:10px;
+    text-underline-offset:-2px;
+  }
+  .hero p.lede{
+    max-width:44ch;
+    font-size:18px;
+    color:var(--navy-soft);
+    margin-top:20px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-top:28px;
+    flex-wrap:wrap;
+  }
+  .hero-stats{
+    display:flex;
+    gap:36px;
+    margin-top:44px;
+    flex-wrap:wrap;
+  }
+  .hero-stats div strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:24px;
+    font-weight:600;
+  }
+  .hero-stats div span{
+    font-size:13px;
+    color:var(--navy-soft);
+  }
+  .hero-image{
+    margin-top:34px;
+    max-width:480px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 40px rgba(16,42,84,0.12);
+  }
+  .hero-image svg{display:block; width:100%; height:auto;}
+
+  /* ---------------- ENQUIRY CARD ---------------- */
+  .enquiry-card{
+    background:var(--white);
+    border:1.5px solid var(--navy);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+  }
+  .enquiry-head{
+    padding:20px 26px;
+    border-bottom:1px solid var(--line);
+    background:var(--navy);
+    border-radius:12px 12px 0 0;
+    color:var(--white);
+  }
+  .enquiry-head h3{color:var(--white); font-size:18px;}
+  .enquiry-head p{
+    margin:4px 0 0;
+    font-size:13px;
+    color:#c3d0e6;
+  }
+  .enquiry-form{
+    padding:24px 26px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field label{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--navy-soft);
+  }
+  .field input, .field select{
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    color:var(--navy);
+    background:var(--offwhite);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:11px 12px;
+    outline:none;
+    transition:border-color .2s;
+  }
+  .field input:focus, .field select:focus{border-color:var(--navy);}
+  .field input::placeholder{color:#9fb0c9;}
+  .enquiry-submit{width:100%; justify-content:center;}
+  .enquiry-note{font-size:12px; color:var(--navy-soft); text-align:center; margin:0;}
+
+  /* ---------------- SECTION SCAFFOLD ---------------- */
+  section{padding:80px 0;}
+  @media (max-width:720px){ section{padding:56px 0;} }
+  @media (max-width:480px){ section{padding:44px 0;} }
+  section.tint{background:var(--offwhite);}
+  .section-head{margin:0 auto 40px; max-width:640px; text-align:center;}
+  .section-head .eyebrow{justify-content:center;}
+  .section-head h2{font-size:clamp(26px,3.4vw,36px); margin-top:10px;}
+  .section-head p.sub{
+    margin-top:14px;
+    color:var(--navy-soft);
+    font-size:16px;
+  }
+  section > .wrap > *:not(.section-head){margin-left:auto; margin-right:auto;}
+
+  /* ---------------- EQUATION SIGNATURE ---------------- */
+  .equation{
+    display:flex;
+    align-items:stretch;
+    gap:0;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .eq-card{
+    flex:1 1 230px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-top:3px solid var(--navy);
+    border-radius:10px;
+    padding:30px 26px;
+    box-shadow:0 10px 26px rgba(16,42,84,0.06);
+  }
+  .eq-card .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--navy-soft);
+    letter-spacing:0.08em;
+  }
+  .eq-card h3{font-size:20px; margin-top:12px;}
+  .eq-card p{color:var(--navy-soft); font-size:14.5px; margin-top:10px;}
+  .eq-op{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:64px;
+    flex:0 0 64px;
+    font-family:'Fraunces', serif;
+    font-size:34px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  @media (max-width:820px){
+    .equation{flex-direction:column;}
+    .eq-op{width:100%; padding:6px 0;}
+  }
+
+  /* ---------------- COURSE DETAILS ---------------- */
+  #course{position:relative; overflow:hidden;}
+  #course::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(var(--line) 1.4px, transparent 1.4px);
+    background-size:26px 26px;
+    -webkit-mask-image:linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+    mask-image:linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+    pointer-events:none;
+    z-index:0;
+  }
+  .course-symbol{
+    position:absolute;
+    left:-4vw;
+    bottom:-8vw;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:min(28vw,300px);
+    color:var(--tint);
+    line-height:1;
+    z-index:0;
+    pointer-events:none;
+    user-select:none;
+  }
+  #course > .wrap{position:relative; z-index:1;}
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  @media (max-width:920px){ .info-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .info-grid{grid-template-columns:1fr;} }
+  .info-cell{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:30px 26px;
+    text-align:center;
+    box-shadow:0 10px 24px rgba(16,42,84,0.05);
+    transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  }
+  .info-cell:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 36px rgba(16,42,84,0.14);
+    border-color:var(--navy);
+  }
+  .info-icon{
+    width:46px;
+    height:46px;
+    border-radius:12px;
+    background:var(--tint);
+    color:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 16px;
+    transition:transform .28s ease;
+  }
+  .info-icon svg{width:22px; height:22px;}
+  .info-cell:hover .info-icon{transform:scale(1.08) rotate(-4deg);}
+  .info-cell .k{
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--navy-soft);
+    margin-bottom:10px;
+    display:block;
+  }
+  .info-cell .v{font-size:16px; font-weight:500;}
+  .info-cell .v small{
+    display:block;
+    font-weight:400;
+    color:var(--navy-soft);
+    font-size:14px;
+    margin-top:4px;
+  }
+  .info-cell.fee-highlight{
+    background:var(--navy);
+    border-color:var(--navy);
+  }
+  .info-cell.fee-highlight .info-icon{background:rgba(255,255,255,0.14); color:var(--white);}
+  .info-cell.fee-highlight .k{color:#9fb3d6;}
+  .info-cell.fee-highlight .v{color:var(--white);}
+  .info-cell.fee-highlight .v small{color:#c3d0e6;}
+  .info-cell.fee-highlight:hover{box-shadow:0 20px 40px rgba(16,42,84,0.32);}
+
+  .includes{
+    max-width:720px;
+    margin:32px auto 0;
+    background:var(--offwhite);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:30px 34px;
+    text-align:center;
+  }
+  .includes h3{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:16px;
+  }
+  .includes ul{list-style:none; margin:0; padding:0; display:inline-block; text-align:left;}
+  .includes li{
+    position:relative;
+    padding:8px 0 8px 26px;
+    font-size:14.5px;
+    color:var(--navy-soft);
+  }
+  .includes li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:8px;
+    color:var(--navy);
+    font-weight:700;
+  }
+  .pill{
+    display:inline-block;
+    font-size:12px;
+    font-weight:600;
+    background:var(--navy);
+    color:var(--white);
+    padding:4px 10px;
+    border-radius:20px;
+    margin-top:8px;
+  }
+  .pill-outline{
+    display:inline-block;
+    font-size:12px;
+    font-weight:600;
+    border:1px solid var(--navy-soft);
+    color:var(--navy-soft);
+    padding:4px 10px;
+    border-radius:20px;
+    margin-top:8px;
+  }
+
+  /* ---------------- PRE-BATCH ---------------- */
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  @media (max-width:820px){ .two-col{grid-template-columns:1fr;} }
+  .prebatch-steps{list-style:none; margin:0; padding:0;}
+  .prebatch-steps li{
+    display:flex;
+    gap:18px;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .prebatch-steps li:last-child{border-bottom:none;}
+  .step-no{
+    font-family:'Fraunces', serif;
+    font-size:20px;
+    font-weight:600;
+    color:var(--navy-soft);
+    opacity:0.5;
+    white-space:nowrap;
+  }
+  .step-body h4{margin:0 0 4px; font-size:17px; font-weight:600; font-family:'Fraunces', serif;}
+  .step-body p{margin:0; color:var(--navy-soft); font-size:14.5px;}
+
+  .quote-block{
+    background:var(--offwhite);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:32px 34px;
+    align-self:start;
+  }
+  .quote-block .mark{
+    font-family:'Fraunces', serif;
+    font-size:48px;
+    color:var(--navy);
+    opacity:0.25;
+    line-height:0.5;
+    display:block;
+    margin-bottom:12px;
+  }
+  .quote-block p{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:500;
+    line-height:1.5;
+    margin:0 0 16px;
+  }
+  .quote-block .who{
+    font-size:13px;
+    font-weight:600;
+    color:var(--navy-soft);
+  }
+
+  /* ---------------- FACULTY ---------------- */
+  .faculty{
+    max-width:760px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-top:4px solid var(--navy);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:48px 52px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  @media (max-width:600px){ .faculty{padding:36px 24px;} }
+  .faculty-plate{
+    width:120px;
+    aspect-ratio:1;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 12px 26px rgba(16,42,84,0.22);
+  }
+  .faculty-plate .initials{
+    font-family:'Fraunces', serif;
+    font-size:44px;
+    font-weight:600;
+    color:var(--white);
+  }
+  .credentials{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:16px 0 22px;}
+  .credentials span{
+    font-size:12px;
+    font-weight:600;
+    border:1px solid var(--navy-soft);
+    color:var(--navy-soft);
+    padding:5px 11px;
+    border-radius:20px;
+  }
+  .faculty-copy{display:flex; flex-direction:column; align-items:center; margin-top:20px;}
+  .faculty-copy h3{font-size:28px; margin-bottom:4px;}
+  .faculty-copy .role{
+    font-size:13px;
+    font-weight:600;
+    color:var(--navy-soft);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .faculty-copy p{max-width:58ch; color:var(--navy-soft); margin-top:16px;}
+  .faculty-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px 0;
+    margin-top:30px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    width:100%;
+    justify-content:center;
+  }
+  .faculty-stats div{flex:1 1 120px; max-width:160px;}
+  .faculty-stats div strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:24px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .faculty-stats div span{font-size:12.5px; color:var(--navy-soft);}
+
+  /* ---------------- FAQ ---------------- */
+  .faq{max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:22px 0;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:17px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .plusminus{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:20px;
+    color:var(--navy);
+    flex-shrink:0;
+  }
+  .faq-item[open] summary .plusminus::before{content:"−";}
+  .faq-item:not([open]) summary .plusminus::before{content:"+";}
+  .faq-item p{margin:0 0 24px; color:var(--navy-soft); max-width:60ch; font-size:15px;}
+
+  /* ---------------- CONTACT ---------------- */
+  .contact{background:var(--navy-deep); color:var(--white);}
+  .contact .section-head h2{color:var(--white);}
+  .contact .eyebrow{color:#8ea6cf;}
+  .contact .eyebrow::before{background:#8ea6cf;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:720px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:12px;
+    padding:28px 30px;
+    text-align:center;
+  }
+  .contact-card .eyebrow{margin-bottom:14px; justify-content:center;}
+  .contact-card a.big{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--white);
+    display:inline-block;
+    margin-bottom:8px;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s;
+  }
+  .contact-card a.big:hover{border-color:#8ea6cf;}
+  .contact-card p{margin:0; color:#a9bcda; font-size:14px;}
+
+  footer{padding:26px 0; background:var(--navy-deep);}
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:13px;
+    color:#7f96bd;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:22px;
+  }
+
+  /* ---------------- STICKY ICONS ---------------- */
+  .sticky-icons{
+    position:fixed;
+    right:22px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    z-index:70;
+  }
+  .sticky-icons a{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--white);
+    border:1.5px solid var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--navy);
+    box-shadow:var(--shadow);
+    transition:transform .18s ease, background .18s ease, color .18s ease;
+  }
+  .sticky-icons a svg{width:20px; height:20px;}
+  .sticky-icons a:hover{background:var(--navy); color:var(--white); transform:translateY(-2px) scale(1.05);}
+  .sticky-icons a.top{
+    background:var(--navy);
+    color:var(--white);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, transform .18s ease;
+  }
+  .sticky-icons a.top.show{opacity:1; pointer-events:auto;}
+  @media (max-width:640px){
+    .sticky-icons{right:14px; gap:10px;}
+    .sticky-icons a{width:40px; height:40px;}
+    .sticky-icons a svg{width:17px; height:17px;}
+  }
+
+  /* Reveal-on-scroll: content is visible by default (progressive enhancement).
+     It's only switched to the hidden/animate-in state once JS confirms it's
+     running (.js-ready). This way a blocked/slow CDN, a disabled script, or
+     a mis-measured ScrollTrigger can never leave content permanently invisible. */
+  .reveal{opacity:1; transform:none;}
+  .js-ready .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .js-ready .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="sticky-icons">
+  <a href="https://wa.me/917304785085" target="_blank" rel="noopener" aria-label="Message on WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18a7.94 7.94 0 0 1-4.06-1.11l-.29-.17-3.02.79.8-2.94-.19-.3A7.95 7.95 0 1 1 12 20Zm4.36-5.96c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.31-1.63-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.53-1.28-.73-1.75-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28Z" fill="currentColor"/></svg>
+  </a>
+  <a href="mailto:svadhyaya108.learning@gmail.com" aria-label="Email Svadhyaya Institute" title="Email">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="#course" aria-label="Jump to course particulars" title="Course &amp; Fees">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v4H4V4Zm0 6h16v10H4V10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 14h3M8 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </a>
+  <a href="#top" class="top" id="scrollTop" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<header id="top">
+  <div class="wrap">
+    <div class="masthead">
+      <div class="brand">
+        <div class="glyph">S</div>
+        <div class="name">Svadhyaya <span>Institute</span></div>
+      </div>
+      <nav>
+        <div class="links">
+          <a class="navlink" href="#course">Course &amp; Fees</a>
+          <a class="navlink" href="#faculty">Your Tutor</a>
+          <a class="navlink" href="#faq">FAQ</a>
+        </div>
+        <a class="btn btn-primary cta-enquire" href="#contact" style="margin-left:24px;">Enquire</a>
+        <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="mobile-link" href="#course">Course &amp; Fees</a>
+      <a class="mobile-link" href="#faculty">Your Tutor</a>
+      <a class="mobile-link" href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#contact">Enquire →</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eq">=</div>
+  <div class="wrap">
+    <div class="hero-outer">
+      <div>
+        <p class="eyebrow">Grade 11 · CBSE Accountancy · Live Online</p>
+        <h1>Every concept has to <span class="u">balance</span> before it makes sense.</h1>
+        <p class="lede">Live online classes for Class 11 CBSE Accountancy, led personally by a Chartered Accountant and CFA charterholder. Small batches, real dialogue, no recordings pretending to be teaching.</p>
+
+        <div class="hero-image">
+          <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of an accountancy desk with a calculator, a rising growth chart, and a stack of coins">
+            <rect x="0" y="0" width="520" height="320" rx="18" fill="var(--tint)"/>
+
+            <!-- calculator -->
+            <g transform="translate(46,54)">
+              <rect x="0" y="0" width="152" height="214" rx="14" fill="var(--white)" stroke="var(--navy)" stroke-width="1.5"/>
+              <rect x="14" y="16" width="124" height="42" rx="6" fill="var(--navy)"/>
+              <text x="76" y="43" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" letter-spacing="0.5" fill="var(--white)">₹ 12,480</text>
+              <g>
+                <rect x="14" y="72" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="59" y="72" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="104" y="72" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="14" y="108" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="59" y="108" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="104" y="108" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="14" y="144" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="59" y="144" width="34" height="28" rx="5" fill="var(--tint)"/>
+                <rect x="104" y="144" width="34" height="52" rx="5" fill="var(--navy)"/>
+                <text x="121" y="176" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="20" fill="var(--white)">=</text>
+              </g>
+            </g>
+
+            <!-- growth chart -->
+            <g transform="translate(232,58)">
+              <line x1="0" y1="150" x2="230" y2="150" stroke="var(--line)" stroke-width="1.5"/>
+              <rect x="6" y="104" width="38" height="46" rx="4" fill="var(--navy)" fill-opacity="0.32"/>
+              <rect x="62" y="78" width="38" height="72" rx="4" fill="var(--navy)" fill-opacity="0.52"/>
+              <rect x="118" y="46" width="38" height="104" rx="4" fill="var(--navy)" fill-opacity="0.76"/>
+              <rect x="174" y="10" width="38" height="140" rx="4" fill="var(--navy)"/>
+              <path d="M12 96 66 70 122 40 178 4" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="1 7"/>
+              <path d="M168 4 h20 v18" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+
+            <!-- coin stack -->
+            <g transform="translate(392,190)">
+              <ellipse cx="46" cy="86" rx="46" ry="12" fill="var(--navy)" opacity="0.1"/>
+              <ellipse cx="46" cy="70" rx="42" ry="13" fill="var(--white)" stroke="var(--navy)" stroke-width="1.5"/>
+              <ellipse cx="46" cy="52" rx="42" ry="13" fill="var(--white)" stroke="var(--navy)" stroke-width="1.5"/>
+              <ellipse cx="46" cy="34" rx="42" ry="13" fill="var(--navy)"/>
+              <text x="46" y="39" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="16" fill="var(--white)">₹</text>
+            </g>
+          </svg>
+        </div>
+
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/917304785085" target="_blank" rel="noopener">Message on WhatsApp →</a>
+          <a class="btn btn-ghost" href="#course">See batch timings</a>
+          <a class="btn btn-ghost" href="#faculty">Know your tutor</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>Live only</strong><span>no recorded playback</span></div>
+          <div><strong>₹6,500</strong><span>per month, Batch 1</span></div>
+        </div>
+      </div>
+
+      <div class="enquiry-card">
+        <div class="enquiry-head">
+          <h3>Request a callback</h3>
+          <p>We'll reply on WhatsApp, usually the same day.</p>
+        </div>
+        <form class="enquiry-form" id="enquiryForm">
+          <div class="field">
+            <label for="ef-name">Student's name</label>
+            <input id="ef-name" name="name" type="text" placeholder="e.g. Ananya Rao" required>
+          </div>
+          <div class="field">
+            <label for="ef-phone">WhatsApp / phone number</label>
+            <input id="ef-phone" name="phone" type="tel" placeholder="e.g. 98765 43210" required>
+          </div>
+          <div class="field">
+            <label for="ef-batch">Preferred batch</label>
+            <select id="ef-batch" name="batch">
+              <option>Batch 1 — Mon/Wed/Fri, 7:00–8:30 PM</option>
+              <option>Batch 2 — to be announced</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary enquiry-submit">Send enquiry →</button>
+          <p class="enquiry-note">Opens WhatsApp with your details filled in — nothing is stored on this page.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUATION SIGNATURE -->
+<section class="tint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why Svadhyaya</p>
+      <h2>The same logic that balances a ledger, balances a lesson plan.</h2>
+      <p class="sub">Every class is built to add up to one outcome — a student who understands why an entry works, not just where it goes.</p>
+    </div>
+    <div class="equation reveal">
+      <div class="eq-card">
+        <span class="num">01</span>
+        <h3>Structured concepts</h3>
+        <p>Every topic is broken down and reasoned through live — the "why" before the "how."</p>
+      </div>
+      <div class="eq-op">+</div>
+      <div class="eq-card">
+        <span class="num">02</span>
+        <h3>Guided practice</h3>
+        <p>Small batches mean questions get asked and answered in the room, not left for later.</p>
+      </div>
+      <div class="eq-op">=</div>
+      <div class="eq-card">
+        <span class="num">03</span>
+        <h3>Exam-ready confidence</h3>
+        <p>15+ years of applying this in real firms, brought into how each session is taught.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE DETAILS -->
+<section id="course">
+  <span class="course-symbol" aria-hidden="true">₹</span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Course Particulars</p>
+      <h2>One course, taught properly.</h2>
+      <p class="sub">Everything you need to know before you enquire — what's taught, how classes run, and what it costs. No fine print buried elsewhere.</p>
+    </div>
+    <div class="info-grid reveal">
+      <div class="info-cell">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M2 8.5 12 4l10 4.5-10 4.5-10-4.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M6 11v5c0 1.2 2.69 2.5 6 2.5s6-1.3 6-2.5v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M21 9v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <span class="k">Course</span>
+        <span class="v">Grade 11 Accountancy, CBSE<br><span class="pill">Live classes only</span></span>
+      </div>
+      <div class="info-cell">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M10 8.5v7l6-3.5-6-3.5Z" fill="currentColor"/></svg></div>
+        <span class="k">Format</span>
+        <span class="v">Live, instructor-led online sessions<small>No self-paced recordings</small></span>
+      </div>
+      <div class="info-cell fee-highlight">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h9M7 9h9M7 4c4 0 6 2 6 5s-2 5-6 5M7 14h9M11 14l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="k">Fee</span>
+        <span class="v">₹6,500 <small style="display:inline">/ month</small><small>Billed monthly, payable at the start of each month</small></span>
+      </div>
+      <div class="info-cell">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <span class="k">Schedule</span>
+        <span class="v">Mon · Wed · Fri<small>7:00 PM – 8:30 PM · 90-minute sessions</small></span>
+      </div>
+      <div class="info-cell">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8.5" r="2.8" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19c.6-3 2.6-4.7 5.5-4.7s4.9 1.7 5.5 4.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.2" stroke="currentColor" stroke-width="1.4"/><path d="M15.8 14.6c2.2.2 3.7 1.7 4.2 4.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <span class="k">Batch size</span>
+        <span class="v">Kept deliberately small<small>So every question gets answered live</small></span>
+      </div>
+      <div class="info-cell">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12.5 11 14.5 15.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <span class="k">Eligibility</span>
+        <span class="v">Grade 11, Commerce stream<small>CBSE curriculum</small></span>
+      </div>
+    </div>
+
+    <div class="includes reveal">
+      <h3>What's included in the fee</h3>
+      <ul>
+        <li>A one-on-one pre-batch meeting with Shweta before your first class</li>
+        <li>All live sessions for the month, Batch 1 — Mon/Wed/Fri, 7:00–8:30 PM</li>
+        <li>Doubts answered in real time during every session, not queued for later</li>
+        <li>Direct WhatsApp access to Shweta for schedule or coursework questions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-BATCH MEETING -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Before You Begin</p>
+      <h2>A conversation, before the coursework.</h2>
+    </div>
+    <div class="two-col">
+      <ol class="prebatch-steps reveal" style="padding:0; list-style:none;">
+        <li>
+          <span class="step-no">01</span>
+          <div class="step-body">
+            <h4>You reach out</h4>
+            <p>A message on WhatsApp or email starts the process — no forms, no waiting on a call centre.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-no">02</span>
+          <div class="step-body">
+            <h4>One-on-one with Shweta</h4>
+            <p>A direct conversation with your tutor to clarify doubts, questions, and understand your objective for joining the class.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-no">03</span>
+          <div class="step-body">
+            <h4>You join Batch 1</h4>
+            <p>Live, Monday–Wednesday–Friday, 7:00–8:30 PM.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="quote-block reveal">
+        <span class="mark">"</span>
+        <p>I've taught students alongside my own work for years — now I teach full time, because that's where I want to help most: students just starting their journey in accountancy.</p>
+        <span class="who">— Shweta Iyengar, Founding Tutor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section class="tint" id="faculty">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Your Tutor</p>
+      <h2>Taught by someone who has done the work.</h2>
+    </div>
+    <div class="faculty reveal">
+      <div class="faculty-plate"><span class="initials">SI</span></div>
+      <div class="faculty-copy">
+        <h3>Shweta Iyengar</h3>
+        <div class="role">Founding Tutor · Mumbai, India</div>
+        <div class="credentials">
+          <span>Chartered Accountant, India</span>
+          <span>CFA Charter — CFA Institute, USA</span>
+          <span>Level 4 — CISI, UK</span>
+        </div>
+        <p>Over 15 years of industry experience across leading investment and portfolio management firms in Mumbai, Bangalore, and the UK. Alongside that work, she spent close to five years teaching students across accountancy and financial management — and has now moved into teaching full time, focused on students who are just beginning their journey in accountancy.</p>
+      </div>
+      <div class="faculty-stats">
+        <div><strong>15+ yrs</strong><span>industry experience</span></div>
+        <div><strong>3</strong><span>professional qualifications</span></div>
+        <div><strong>5 yrs</strong><span>teaching accountancy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Questions, Answered</p>
+      <h2>Before you write in.</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item" open>
+        <summary>Are the classes live, or recorded?<span class="plusminus"></span></summary>
+        <p>Live only. Every session is taught in real time by Shweta, so questions get answered as they come up — nothing is pre-recorded for later viewing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens at the pre-batch meeting?<span class="plusminus"></span></summary>
+        <p>Before joining, you get a one-on-one conversation with the tutor to clarify doubts and questions, and to talk through what you're hoping to get out of the class.</p>
+      </details>
+      <details class="faq-item">
+        <summary>When is Batch 2?<span class="plusminus"></span></summary>
+        <p>Batch 2 timings are yet to be announced. Write in on WhatsApp or email and you'll be informed as soon as the schedule is confirmed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How and when do I pay?<span class="plusminus"></span></summary>
+        <p>The course is ₹6,500 per month, payable at the beginning of each month.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get in touch?<span class="plusminus"></span></summary>
+        <p>Message on WhatsApp at 7304785085, or write to svadhyaya108.learning@gmail.com — either way, you'll hear back from Shweta directly.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Ready to join the class?</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <p class="eyebrow">WhatsApp</p>
+        <a class="big" href="https://wa.me/917304785085" target="_blank" rel="noopener">+91 73047 85085</a>
+        <p>Fastest way to reach Shweta directly and set up your pre-batch meeting.</p>
+      </div>
+      <div class="contact-card">
+        <p class="eyebrow">Email</p>
+        <a class="big" href="mailto:svadhyaya108.learning@gmail.com">svadhyaya108.learning@gmail.com</a>
+        <p>For longer questions, or if you'd rather write than call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© Svadhyaya Institute of Learning</span>
+      <span>Grade 11 Accountancy · CBSE · Live Online Coaching</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  const enquiryForm = document.getElementById('enquiryForm');
+  if(enquiryForm){
+    enquiryForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('ef-name').value.trim();
+      const phone = document.getElementById('ef-phone').value.trim();
+      const batch = document.getElementById('ef-batch').value;
+      const text = `Hi Shweta, I'm ${name} (${phone}). I'd like to know more about the Grade 11 Accountancy class — ${batch}.`;
+      const url = 'https://wa.me/917304785085?text=' + encodeURIComponent(text);
+      window.open(url, '_blank', 'noopener');
+    });
+  }
+
+  // Only switch content into the "hidden until revealed" state once JS is
+  // confirmed to be running. If JS is blocked/disabled, .reveal elements
+  // simply stay at their default opacity:1 and the page is fully visible.
+  document.documentElement.classList.add('js-ready');
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+
+  if(prefersReducedMotion || !hasGSAP){
+    // Fallback: simple fade-up on scroll, no external motion library required.
+    // Used automatically if the GSAP CDN is blocked, slow, or down.
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    items.forEach(el=>io.observe(el));
+
+    // Safety net: force-reveal anything left un-triggered (e.g. a page that
+    // never scrolls, or an element the observer never caught).
+    window.setTimeout(()=>{
+      items.forEach(el=>{ if(!el.classList.contains('in')) el.classList.add('in'); });
+    }, 1500);
+  } else {
+    gsap.registerPlugin(ScrollTrigger);
+    // Hand these elements fully over to GSAP: drop the "reveal" class so the
+    // CSS opacity/transform transition on it can't run at the same time as
+    // GSAP's own tween on those same properties. Having both active was
+    // causing every reveal to visibly play twice (once via the CSS
+    // transition, once via GSAP) instead of once, smoothly.
+    document.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
+
+    // ---- Hero entrance ----
+    const heroTl = gsap.timeline({defaults:{ease:'power3.out'}});
+    heroTl
+      .from('.hero-eq', {opacity:0, scale:0.85, duration:1.1, ease:'power2.out'})
+      .from('.hero .eyebrow', {opacity:0, y:16, duration:.6}, '-=0.7')
+      .from('.hero h1', {opacity:0, y:26, duration:.75}, '-=0.4')
+      .from('.hero .lede', {opacity:0, y:20, duration:.65}, '-=0.45')
+      .from('.hero-image', {opacity:0, y:28, scale:0.94, duration:.7}, '-=0.35')
+      .from('.hero-actions .btn', {opacity:0, y:16, duration:.5, stagger:0.12}, '-=0.35')
+      .from('.hero-stats > div', {opacity:0, y:14, duration:.5, stagger:0.1}, '-=0.3')
+      .from('.enquiry-card', {opacity:0, x:28, duration:.75}, '-=0.9');
+
+    // gentle ambient float on the hero illustration
+    gsap.to('.hero-image', {y:-8, duration:2.6, ease:'sine.inOut', repeat:-1, yoyo:true, delay:1.4});
+
+    // parallax drift on the big background "="
+    gsap.to('.hero-eq', {
+      y:60,
+      ease:'none',
+      scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:0.6}
+    });
+
+    // ---- Generic section reveals ----
+    gsap.utils.toArray('.section-head').forEach(el=>{
+      gsap.from(el, {
+        opacity:0, y:34, duration:.7, ease:'power2.out',
+        scrollTrigger:{trigger:el, start:'top 85%'}
+      });
+    });
+
+    // ---- Equation cards: assemble like an equation ----
+    const eqRow = document.querySelector('.equation');
+    if(eqRow){
+      gsap.from(eqRow.children, {
+        opacity:0,
+        y:(i)=> i % 2 === 0 ? 40 : 0,
+        scale:(i)=> i % 2 === 0 ? 0.92 : 0.5,
+        duration:.7,
+        stagger:0.14,
+        ease:'back.out(1.6)',
+        scrollTrigger:{trigger:eqRow, start:'top 82%'}
+      });
+    }
+
+    // ---- Course info cards ----
+    const infoGrid = document.querySelector('.info-grid');
+    if(infoGrid){
+      gsap.from(infoGrid.children, {
+        opacity:0, y:36, scale:0.95, duration:.6, stagger:0.09, ease:'power2.out',
+        scrollTrigger:{trigger:infoGrid, start:'top 85%'}
+      });
+      gsap.from('.info-icon', {
+        scale:0, rotate:-12, duration:.5, stagger:0.09, ease:'back.out(2.2)',
+        scrollTrigger:{trigger:infoGrid, start:'top 80%'}
+      });
+    }
+
+    gsap.utils.toArray('.includes').forEach(el=>{
+      gsap.from(el, {opacity:0, y:26, duration:.6, ease:'power2.out', scrollTrigger:{trigger:el, start:'top 88%'}});
+    });
+
+    // ---- Pre-batch steps: stagger left, quote: fade from right ----
+    const steps = document.querySelectorAll('.prebatch-steps li');
+    if(steps.length){
+      gsap.from(steps, {
+        opacity:0, x:-30, duration:.6, stagger:0.15, ease:'power2.out',
+        scrollTrigger:{trigger:'.prebatch-steps', start:'top 82%'}
+      });
+    }
+    const quote = document.querySelector('.quote-block');
+    if(quote){
+      gsap.from(quote, {
+        opacity:0, x:30, duration:.7, ease:'power2.out',
+        scrollTrigger:{trigger:quote, start:'top 82%'}
+      });
+    }
+
+    // ---- Faculty card ----
+    const facultyCard = document.querySelector('.faculty');
+    if(facultyCard){
+      gsap.from(facultyCard, {
+        opacity:0, y:40, scale:0.96, duration:.8, ease:'power2.out',
+        scrollTrigger:{trigger:facultyCard, start:'top 82%'}
+      });
+      gsap.from('.faculty-plate', {
+        opacity:0, scale:0.6, rotate:-10, duration:.7, ease:'back.out(1.8)',
+        scrollTrigger:{trigger:facultyCard, start:'top 78%'}
+      });
+      gsap.from('.faculty-stats > div', {
+        opacity:0, y:18, duration:.5, stagger:0.12, ease:'power2.out',
+        scrollTrigger:{trigger:'.faculty-stats', start:'top 90%'}
+      });
+    }
+
+    // ---- FAQ items ----
+    const faqItems = document.querySelectorAll('.faq-item');
+    if(faqItems.length){
+      gsap.from(faqItems, {
+        opacity:0, y:24, duration:.55, stagger:0.09, ease:'power2.out',
+        scrollTrigger:{trigger:'.faq', start:'top 85%'}
+      });
+    }
+
+    // ---- Contact cards ----
+    const contactCards = document.querySelectorAll('.contact-card');
+    if(contactCards.length){
+      gsap.from(contactCards, {
+        opacity:0, y:30, duration:.6, stagger:0.14, ease:'power2.out',
+        scrollTrigger:{trigger:'.contact-grid', start:'top 85%'}
+      });
+    }
+
+    // ---- Sticky icons: entrance from the right ----
+    gsap.from('.sticky-icons a:not(.top)', {
+      opacity:0, x:24, duration:.5, stagger:0.08, ease:'power2.out', delay:0.6
+    });
+
+    // ---- Safety net ----
+    // Every gsap.from({opacity:0, ...}) call above sets that element's
+    // starting opacity via an inline style immediately, and only animates
+    // it to visible once its ScrollTrigger point is crossed. If a trigger
+    // is ever mis-measured (a late web-font swap changing page height, a
+    // resize, an element that never quite crosses the threshold, etc.) the
+    // element could stay invisible forever. This finds every element GSAP
+    // has dimmed and guarantees each one is revealed: shortly after it's
+    // actually scrolled into view, or after a hard timeout regardless — so
+    // nothing can stay permanently blank.
+    const revealTarget = (el)=>{
+      gsap.to(el, {opacity:1, x:0, y:0, scale:1, rotate:0, duration:.4, overwrite:'auto'});
+    };
+    const findDimmedTargets = ()=> Array.from(document.querySelectorAll('*')).filter(el=>{
+      const op = parseFloat(el.style.opacity);
+      return !isNaN(op) && op < 1;
+    });
+
+    const gsapSafetyNet = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        setTimeout(()=>{
+          if(parseFloat(getComputedStyle(el).opacity) < 0.05) revealTarget(el);
+        }, 900);
+        gsapSafetyNet.unobserve(el);
+      });
+    }, {threshold:0.05});
+    findDimmedTargets().forEach(el=>gsapSafetyNet.observe(el));
+
+    // Ultimate fallback: if for any reason nothing above catches it (page
+    // never scrolls, e.g. an embedded preview/thumbnail tool), force
+    // everything visible after a few seconds so the page is never blank.
+    window.setTimeout(()=>{
+      findDimmedTargets().forEach(el=>{
+        if(parseFloat(getComputedStyle(el).opacity) < 0.05) revealTarget(el);
+      });
+    }, 3500);
+  }
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(menuToggle && mobileMenu){
+    menuToggle.addEventListener('click', function(){
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 800){
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  const scrollTopBtn = document.getElementById('scrollTop');
+  if(scrollTopBtn){
+    window.addEventListener('scroll', function(){
+      scrollTopBtn.classList.toggle('show', window.scrollY > 480);
+    });
+  }
+</script>
+
+</body>
+</html>
