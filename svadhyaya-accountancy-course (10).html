@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svadhyaya Institute — CBSE Grade 11 Accountancy Live Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --surface:#F7F8FA;
+    --border:#E4E7EC;
+    --border-strong:#D3D8E0;
+    --text:#14181F;
+    --text-dim:#5B6472;
+    --accent:#1B3B6F;
+    --accent-hover:#14315E;
+    --accent-tint:#EAF0F8;
+    --accent-on-dark:#6E9CDC;
+    --gold:#B8863A;
+    --gold-tint:#FBF1E1;
+    --gold-dark:#8F6524;
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; letter-spacing:-0.01em; color:var(--text);}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--accent); display:flex; align-items:center; gap:9px; font-weight:600;
+  }
+  .eyebrow::before{ content:''; width:16px; height:1.5px; background:var(--accent); }
+  ::selection{ background:var(--gold-tint); color:var(--gold-dark); }
+
+  /* SCROLL REVEAL */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  .reveal-1{ transition-delay:.05s; }
+  .reveal-2{ transition-delay:.14s; }
+  .reveal-3{ transition-delay:.22s; }
+  .reveal-4{ transition-delay:.30s; }
+
+  /* CARD HOVER LIFT */
+  .lift{ transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .lift:hover{ transform:translateY(-5px); box-shadow:0 16px 32px -12px rgba(20,24,31,0.16); border-color:var(--border-strong); }
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px); transition:box-shadow .25s ease, border-color .25s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{ box-shadow:0 4px 20px -8px rgba(20,24,31,0.12); border-bottom-color:var(--border); }
+  nav{
+    max-width:var(--maxw); margin:0 auto; padding:18px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{ font-family:var(--serif); font-weight:600; font-size:19px; display:flex; align-items:center; gap:10px; }
+  .logo-mark{
+    width:11px; height:11px; background:var(--accent); flex-shrink:0;
+  }
+  .nav-links{ display:none; align-items:center; gap:32px; font-size:14.5px; color:var(--text-dim); }
+  .nav-links a:hover{ color:var(--text); }
+  @media(min-width:760px){ .nav-links{ display:flex; } }
+
+  /* HAMBURGER */
+  .nav-right{ display:flex; align-items:center; gap:14px; }
+  .hamburger{
+    display:flex; flex-direction:column; justify-content:center; gap:5px;
+    width:34px; height:34px; padding:0; border:1px solid var(--border-strong);
+    border-radius:6px; background:#fff; cursor:pointer; flex-shrink:0;
+  }
+  .hamburger span{
+    display:block; width:16px; height:1.5px; background:var(--text); margin:0 auto;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .hamburger.open span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity:0; }
+  .hamburger.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+  @media(min-width:760px){ .hamburger{ display:none; } }
+
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px;
+    max-width:var(--maxw); margin:0 auto; padding:0 28px 18px;
+    border-top:1px solid var(--border);
+  }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{
+    padding:13px 4px; font-size:15px; color:var(--text-dim); border-bottom:1px solid var(--border);
+  }
+  .mobile-menu a:hover{ color:var(--text); }
+  @media(min-width:760px){ .mobile-menu{ display:none !important; } }
+  .btn{
+    font-family:var(--sans); font-weight:600; font-size:14.5px;
+    padding:11px 20px; border-radius:6px; border:1px solid transparent; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px; transition:background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{ background:var(--accent); color:#fff; box-shadow:0 6px 18px -6px rgba(27,59,111,0.45); }
+  .btn-primary:hover{ background:var(--accent-hover); transform:translateY(-1px); box-shadow:0 10px 22px -6px rgba(27,59,111,0.55); }
+  .btn-ghost{ border-color:var(--border-strong); color:var(--text); background:#fff; }
+  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+
+  .hl{ position:relative; color:var(--accent); white-space:nowrap; }
+  .hl svg{ position:absolute; left:0; bottom:-8px; width:100%; height:10px; }
+
+  /* HERO */
+  .hero{
+    position:relative; padding:64px 0 48px; overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(27,59,111,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(110,156,220,0.14), transparent 55%),
+      linear-gradient(180deg, #F9FAFC 0%, #FFFFFF 100%);
+  }
+  .hero::before{
+    content:''; position:absolute; inset:0; pointer-events:none; opacity:0.5;
+    background-image: radial-gradient(circle, #C6CCD6 1px, transparent 1px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 0%, #000 40%, transparent 90%);
+    mask-image: radial-gradient(ellipse 70% 60% at 30% 0%, #000 40%, transparent 90%);
+  }
+  .hero .wrap{ position:relative; z-index:1; }
+  .hero-illustration{
+    width:100%; height:clamp(170px,24vw,260px); border-radius:16px;
+    overflow:hidden; margin-bottom:40px; border:1px solid var(--border);
+    background:linear-gradient(150deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 68%);
+    backdrop-filter:blur(2px);
+  }
+  .hero-illustration svg{ width:100%; height:100%; display:block; }
+  .hero-grid{ display:grid; grid-template-columns:1.2fr 0.9fr; gap:56px; align-items:start; }
+  @media(max-width:860px){ .hero-grid{ grid-template-columns:1fr; gap:40px; } }
+  .hero-tag-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:20px; }
+  .urgency-badge{
+    font-family:var(--mono); font-size:11.5px; font-weight:600; letter-spacing:0.02em;
+    color:var(--gold-dark); background:var(--gold-tint); border:1px solid var(--gold);
+    border-radius:20px; padding:5px 12px; display:inline-flex; align-items:center; gap:6px;
+  }
+  .urgency-badge::before{
+    content:''; width:6px; height:6px; border-radius:50%; background:var(--gold);
+    box-shadow:0 0 0 rgba(184,134,58,0.5); animation:pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot{
+    0%{ box-shadow:0 0 0 0 rgba(184,134,58,0.5); }
+    70%{ box-shadow:0 0 0 6px rgba(184,134,58,0); }
+    100%{ box-shadow:0 0 0 0 rgba(184,134,58,0); }
+  }
+  .hero h1{ font-size:clamp(34px, 4.8vw, 52px); line-height:1.08; margin:0 0 22px; }
+  .hero p.lead{ font-size:17.5px; color:var(--text-dim); max-width:520px; margin-bottom:30px; }
+  .badge-row{ display:flex; gap:12px; flex-wrap:wrap; }
+  .badge{
+    font-family:var(--mono); font-size:12.5px; color:var(--text-dim);
+    background:var(--surface); border:1px solid var(--border); border-radius:6px;
+    padding:8px 12px; display:inline-flex; align-items:center; gap:7px;
+  }
+  .badge b{ color:var(--text); font-weight:600; }
+
+  /* HERO FORM CARD */
+  .hero-form-card{
+    background:#fff; border:1px solid var(--border-strong); border-radius:12px;
+    padding:28px 26px; box-shadow:0 1px 2px rgba(20,24,31,0.04);
+  }
+  .hero-form-card h3{ font-size:19px; margin-bottom:6px; }
+  .hero-form-card .form-note-top{ font-size:13.5px; color:var(--text-dim); margin-bottom:20px; }
+  .hero-form-card form{ gap:14px; }
+  .hero-form-card .contact-links{ margin-top:16px; }
+  .hero-form-card .contact-links a{ padding:9px 12px; font-size:13.5px; }
+
+  /* SECTION generic */
+  section{ padding:72px 0; }
+  #about-batch{ background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  #pricing{ background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .section-head{ max-width:680px; margin-bottom:36px; }
+  .section-head h2{ font-size:clamp(28px,3.6vw,38px); margin-top:14px; }
+  .section-head p{ color:var(--text-dim); font-size:16px; margin-top:14px; }
+
+  /* FACULTY */
+  .faculty-card{
+    background:#fff; border:1px solid var(--border-strong); border-radius:14px;
+    padding:40px; box-shadow:0 1px 2px rgba(20,24,31,0.04);
+  }
+  .faculty{ display:grid; grid-template-columns:180px 1fr; gap:40px; align-items:start; }
+  @media(max-width:640px){ .faculty{ grid-template-columns:1fr; } .faculty-card{ padding:28px 24px; } }
+  .faculty-avatar{
+    width:180px; height:180px; border-radius:10px;
+    background:linear-gradient(160deg, var(--accent-tint), #fff);
+    border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-size:52px; font-weight:600; color:var(--accent);
+    flex-shrink:0; position:relative;
+  }
+  .faculty-avatar::after{
+    content:''; position:absolute; inset:0; border-radius:10px;
+    box-shadow:inset 0 0 0 1px var(--border-strong);
+  }
+  @media(max-width:640px){ .faculty-avatar{ width:100px; height:100px; font-size:32px; } }
+  .faculty-name-row{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+  .faculty h3{ font-size:26px; }
+  .faculty .role{ font-family:var(--mono); font-size:13px; color:var(--accent); margin-bottom:20px; display:block; }
+  .faculty p{ color:var(--text-dim); font-size:15.5px; max-width:620px; margin-bottom:24px; }
+
+  .faculty-stats{ display:flex; gap:0; margin-bottom:24px; flex-wrap:wrap; }
+  .faculty-stat{ padding:0 22px 0 0; margin-right:22px; border-right:1px solid var(--border); }
+  .faculty-stat:last-child{ border-right:none; }
+  .faculty-stat .num{ font-family:var(--serif); font-size:22px; font-weight:600; color:var(--text); display:block; line-height:1.2; }
+  .faculty-stat .lbl{ font-size:12.5px; color:var(--text-dim); }
+
+  .cred-pills{ display:flex; flex-wrap:wrap; gap:9px; }
+  .cred-pill{
+    font-family:var(--mono); font-size:12.5px; color:var(--text);
+    background:var(--surface); border:1px solid var(--border); border-radius:20px;
+    padding:7px 14px; display:inline-flex; align-items:center; gap:7px;
+  }
+  .cred-pill::before{ content:'✓'; color:var(--accent); font-weight:700; }
+
+  /* legacy, kept in case referenced elsewhere */
+  .cred-list{ display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+  .cred-list li{ list-style:none; font-size:14.5px; display:flex; gap:10px; align-items:flex-start; }
+  .cred-list li::before{ content:'—'; color:var(--accent); flex-shrink:0; }
+
+  /* PRICING */
+  .price-card{
+    max-width:460px; border:1.5px solid var(--gold); border-radius:12px;
+    padding:40px 32px 36px; background:#fff; position:relative;
+    box-shadow:0 20px 40px -20px rgba(184,134,58,0.35);
+  }
+  .price-ribbon{
+    position:absolute; top:-13px; left:32px; background:var(--gold); color:#fff;
+    font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase;
+    padding:5px 14px; border-radius:20px; box-shadow:0 4px 10px -2px rgba(184,134,58,0.5);
+  }
+  .pricing-grid{ display:grid; grid-template-columns:460px 1fr; gap:40px; align-items:start; justify-content:center; }
+  @media(max-width:860px){ .pricing-grid{ grid-template-columns:1fr; } .price-card{ max-width:none; margin:0 auto; } }
+  .pricing-why{
+    background:#fff; border:1px solid var(--border); border-radius:12px; padding:32px 30px;
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .pricing-why h3{ font-size:17px; margin-bottom:2px; }
+  .why-row{ display:flex; gap:16px; align-items:flex-start; }
+  .why-icon{
+    width:38px; height:38px; border-radius:9px; background:var(--accent-tint);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .why-icon svg{ width:18px; height:18px; }
+  .why-title{ font-size:15px; font-weight:600; margin-bottom:3px; }
+  .why-sub{ font-size:13.5px; color:var(--text-dim); line-height:1.5; }
+  .price-card .eyebrow{ margin-bottom:16px; }
+  .price-amount{ font-family:var(--serif); font-size:46px; font-weight:600; }
+  .price-amount span{ font-family:var(--sans); font-size:15px; color:var(--text-dim); font-weight:400; }
+  .price-sub{ color:var(--text-dim); font-size:14px; margin-top:6px; margin-bottom:26px; }
+  .price-features{ display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+  .price-features li{ list-style:none; font-size:14.5px; display:flex; gap:10px; }
+  .price-features li::before{ content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; }
+  .price-card .btn{ width:100%; justify-content:center; }
+
+  /* FORM */
+  .contact-links{ display:flex; flex-direction:column; gap:12px; }
+  .contact-links a{
+    display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--text);
+    padding:11px 14px; background:#fff; border:1px solid var(--border); border-radius:8px;
+  }
+  .contact-links a:hover{ border-color:var(--accent); color:var(--accent); }
+  form{ display:flex; flex-direction:column; gap:16px; }
+  .field label{
+    font-family:var(--mono); font-size:11.5px; color:var(--text-dim); text-transform:uppercase;
+    letter-spacing:0.05em; display:block; margin-bottom:7px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%; background:#fff; border:1px solid var(--border-strong); border-radius:7px;
+    padding:12px 13px; color:var(--text); font-family:var(--sans); font-size:14.5px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--accent); }
+  .field textarea{ resize:vertical; min-height:84px; }
+  .row-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:480px){ .row-2{ grid-template-columns:1fr; } }
+  .form-note{ font-size:12.5px; color:var(--text-dim); }
+  .success-msg{
+    display:none; background:var(--accent-tint); border:1px solid var(--accent);
+    color:var(--accent); padding:14px 16px; border-radius:8px; font-size:14px; font-weight:500;
+  }
+
+  /* FEATURES TABLE (dark, single plan) */
+  .features-section{ }
+  .features-card{
+    background:var(--text); border-radius:16px; padding:44px 36px 12px;
+    color:#fff;
+  }
+  .plan-pill-row{ display:flex; justify-content:center; margin-bottom:34px; }
+  .plan-pill{
+    border:1.5px solid var(--accent-on-dark); border-radius:10px;
+    padding:16px 28px; font-family:var(--serif); font-weight:600; font-size:17px;
+    color:#fff; text-align:center; max-width:360px;
+  }
+  .features-table-head{
+    display:grid; grid-template-columns:1fr 200px; gap:20px; align-items:center;
+    padding:0 4px 18px; border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .features-table-head .col-label{ font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-on-dark); font-weight:600; }
+  .features-table-head .col-plan{
+    font-family:var(--serif); font-size:15px; font-weight:600; color:#fff; text-align:center;
+  }
+  .feature-row{
+    display:grid; grid-template-columns:1fr 200px; gap:20px; align-items:center;
+    padding:18px 4px; border-bottom:1px solid rgba(255,255,255,0.07);
+  }
+  .feature-row:last-child{ border-bottom:none; }
+  .feature-name{ font-size:14.5px; color:#EDEFF2; }
+  .feature-check{ display:flex; justify-content:center; }
+  .feature-check .dot{
+    width:26px; height:26px; border-radius:50%; background:var(--accent);
+    color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px;
+  }
+  @media(max-width:560px){
+    .features-table-head, .feature-row{ grid-template-columns:1fr 90px; gap:10px; }
+    .features-card{ padding:32px 18px 12px; }
+  }
+
+  /* ABOUT THE BATCH */
+  .batch-card{
+    display:grid; grid-template-columns:1fr 1fr;
+    border:1px solid var(--border-strong); border-radius:14px; overflow:hidden; background:#fff;
+  }
+  @media(max-width:760px){ .batch-card{ grid-template-columns:1fr; } }
+  .batch-card-left{
+    padding:36px 34px; display:flex; flex-direction:column; gap:26px;
+  }
+  .batch-card-right{
+    padding:36px 34px; background:var(--surface);
+    border-left:1px solid var(--border);
+  }
+  @media(max-width:760px){ .batch-card-right{ border-left:none; border-top:1px solid var(--border); } }
+  .batch-row{ display:flex; align-items:flex-start; gap:15px; }
+  .batch-icon{
+    width:42px; height:42px; border-radius:50%; background:var(--accent-tint);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .batch-icon svg{ width:19px; height:19px; }
+  .batch-row .label{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--text-dim); margin-bottom:4px;
+  }
+  .batch-row .value{ font-size:15px; font-weight:600; color:var(--text); line-height:1.4; }
+
+  .batch-card-right h3{ font-size:16px; margin-bottom:18px; }
+  .batch-meta{ display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
+  .batch-meta div{ display:flex; justify-content:space-between; gap:12px; font-size:14px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+  .batch-meta b{ color:var(--text); font-weight:600; }
+  .batch-meta span{ color:var(--text-dim); font-family:var(--mono); font-size:13px; }
+  .offer-title{ font-family:var(--mono); font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px; }
+  .offer-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
+  .offer-list li{ list-style:none; font-size:14.5px; color:var(--text); display:flex; gap:9px; align-items:flex-start; }
+  .offer-list li::before{ content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; }
+  .subject-badge{
+    display:inline-block; font-family:var(--mono); font-size:12.5px; font-weight:600;
+    color:var(--accent); background:var(--accent-tint); border:1px solid var(--accent);
+    border-radius:20px; padding:8px 16px;
+  }
+
+  footer{ padding:40px 0; }
+  .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; }
+  .footer-links{ display:flex; gap:22px; font-size:13.5px; color:var(--text-dim); }
+  .footer-links a:hover{ color:var(--accent); }
+  .copyright{ font-family:var(--mono); font-size:12px; color:var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><span class="logo-mark"></span>Svadhyaya Institute</div>
+    <div class="nav-links">
+      <a href="#about-batch">About the Batch</a>
+      <a href="#faculty">Faculty</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#features">Features</a>
+    </div>
+    <div class="nav-right">
+      <a href="#get-started" class="btn btn-primary">Enroll now</a>
+      <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about-batch">About the Batch</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#features">Features</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-illustration">
+      <svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- soft dot grid backdrop -->
+        <g opacity="0.35">
+          <circle cx="60" cy="40" r="2" fill="#1B3B6F"/>
+          <circle cx="120" cy="40" r="2" fill="#1B3B6F"/>
+          <circle cx="60" cy="90" r="2" fill="#1B3B6F"/>
+          <circle cx="1140" cy="220" r="2" fill="#1B3B6F"/>
+          <circle cx="1080" cy="220" r="2" fill="#1B3B6F"/>
+          <circle cx="1140" cy="170" r="2" fill="#1B3B6F"/>
+        </g>
+
+        <!-- open ledger book -->
+        <g transform="translate(210,60)">
+          <path d="M0 20 Q90 -8 180 20 L180 170 Q90 142 0 170 Z" fill="#FFFFFF" stroke="#D3D8E0" stroke-width="2"/>
+          <path d="M180 20 Q270 -8 360 20 L360 170 Q270 142 180 170 Z" fill="#FFFFFF" stroke="#D3D8E0" stroke-width="2"/>
+          <line x1="180" y1="20" x2="180" y2="170" stroke="#D3D8E0" stroke-width="2"/>
+          <!-- ledger lines left page -->
+          <line x1="24" y1="45" x2="150" y2="35" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="24" y1="68" x2="150" y2="60" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="24" y1="91" x2="150" y2="84" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="24" y1="114" x2="150" y2="108" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="24" y1="137" x2="150" y2="132" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <!-- ledger figures right page -->
+          <line x1="205" y1="35" x2="335" y2="45" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="205" y1="60" x2="300" y2="68" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="205" y1="84" x2="335" y2="91" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="205" y1="108" x2="300" y2="114" stroke="#C6CCD6" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="320" cy="137" r="10" fill="none" stroke="#1B3B6F" stroke-width="3"/>
+          <path d="M315 137 L319 141 L326 132" fill="none" stroke="#1B3B6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- rising bar chart -->
+        <g transform="translate(670,60)">
+          <rect x="0" y="108" width="46" height="62" rx="6" fill="#EAF0F8" stroke="#1B3B6F" stroke-width="2"/>
+          <rect x="62" y="76" width="46" height="94" rx="6" fill="#EAF0F8" stroke="#1B3B6F" stroke-width="2"/>
+          <rect x="124" y="40" width="46" height="130" rx="6" fill="#1B3B6F"/>
+          <path d="M4 60 L58 34 L112 44 L166 4" fill="none" stroke="#1B3B6F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M150 4 L166 4 L166 20" fill="none" stroke="#1B3B6F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- floating coin stack -->
+        <g transform="translate(940,120)">
+          <ellipse cx="0" cy="36" rx="34" ry="11" fill="#EAF0F8" stroke="#1B3B6F" stroke-width="2"/>
+          <ellipse cx="0" cy="24" rx="34" ry="11" fill="#FFFFFF" stroke="#1B3B6F" stroke-width="2"/>
+          <ellipse cx="0" cy="12" rx="34" ry="11" fill="#EAF0F8" stroke="#1B3B6F" stroke-width="2"/>
+          <text x="0" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#1B3B6F" font-weight="600">₹</text>
+        </g>
+
+        <!-- calculator / pencil accent -->
+        <g transform="translate(60,150)">
+          <rect x="0" y="0" width="70" height="90" rx="10" fill="#1B3B6F"/>
+          <rect x="10" y="12" width="50" height="18" rx="3" fill="#EAF0F8"/>
+          <circle cx="18" cy="46" r="5" fill="#EAF0F8"/>
+          <circle cx="35" cy="46" r="5" fill="#EAF0F8"/>
+          <circle cx="52" cy="46" r="5" fill="#EAF0F8"/>
+          <circle cx="18" cy="62" r="5" fill="#EAF0F8"/>
+          <circle cx="35" cy="62" r="5" fill="#EAF0F8"/>
+          <circle cx="52" cy="62" r="5" fill="#6E9CDC"/>
+          <circle cx="18" cy="78" r="5" fill="#EAF0F8"/>
+          <circle cx="35" cy="78" r="5" fill="#EAF0F8"/>
+          <circle cx="52" cy="78" r="5" fill="#EAF0F8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-tag-row">
+        <div class="eyebrow">CBSE Grade 11 · Accountancy</div>
+        <span class="urgency-badge">Batch 1 starts 13 Apr 2026</span>
+      </div>
+      <h1>Live, guided <span class="hl">Accountancy coaching</span> for Grade 11 CBSE students.</h1>
+      <p class="lead">Small, focused live classes with a Chartered Accountant and CFA charterholder — built around clarity on concepts, not just covering the syllabus.</p>
+      <div class="badge-row">
+        <span class="badge"><b>Batch 1</b>&nbsp;Mon · Wed · Fri, 7:00–8:30 PM</span>
+        <span class="badge"><b>Batch 2</b>&nbsp;To be announced</span>
+        <span class="badge">₹6,500 / month</span>
+      </div>
+    </div>
+
+    <div class="hero-form-card" id="get-started">
+      <h3>Request a callback</h3>
+      <div class="form-note-top">Leave your details and we'll set up your pre-batch one-on-one.</div>
+      <form id="heroForm">
+        <div class="field">
+          <label for="hName">Student name</label>
+          <input type="text" id="hName" name="hName" required placeholder="Full name">
+        </div>
+        <div class="field">
+          <label for="hPhone">Phone / WhatsApp</label>
+          <input type="tel" id="hPhone" name="hPhone" required placeholder="10-digit number">
+        </div>
+        <div class="field">
+          <label for="hBatch">Preferred batch</label>
+          <select id="hBatch" name="hBatch" required>
+            <option value="">Select a batch</option>
+            <option value="batch1">Batch 1 — Mon/Wed/Fri, 7:00–8:30 PM</option>
+            <option value="batch2">Batch 2 — timing to be announced</option>
+            <option value="either">Either works for me</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Request callback</button>
+        <div class="success-msg" id="heroSuccessMsg">Thanks — we'll call or WhatsApp you shortly.</div>
+      </form>
+      <div class="contact-links">
+        <a href="https://wa.me/917304785085" target="_blank" rel="noopener">WhatsApp — 7304785085</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about-batch">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">About the Batch</div>
+      <h2>Batch details</h2>
+    </div>
+
+    <div class="batch-card lift reveal">
+      <div class="batch-card-left">
+        <div class="batch-row">
+          <div class="batch-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="7.5" y1="14" x2="7.5" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16.5" y1="14" x2="16.5" y2="14"/></svg>
+          </div>
+          <div>
+            <div class="label">Course Duration</div>
+            <div class="value">13 April 2026 – 15 December 2026</div>
+          </div>
+        </div>
+        <div class="batch-row">
+          <div class="batch-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+          </div>
+          <div>
+            <div class="label">Validity</div>
+            <div class="value">30 April 2027</div>
+          </div>
+        </div>
+        <div class="batch-row">
+          <div class="batch-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M8 14l1.5 1.5L12.5 12.5"/></svg>
+          </div>
+          <div>
+            <div class="label">Schedule</div>
+            <div class="value">Batch 1 — Mon / Wed / Fri, 7:00–8:30 PM</div>
+          </div>
+        </div>
+        <div class="batch-row">
+          <div class="batch-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H5.5L3 22l1-4.2A8 8 0 1 1 21 12z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
+          </div>
+          <div>
+            <div class="label">Format</div>
+            <div class="value">Live classes only, no recorded videos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="batch-card-right">
+        <h3>Additional Info</h3>
+        <div class="batch-meta">
+          <div><b>Course Duration</b><span>8 months</span></div>
+          <div><b>Validity</b><span>30 April 2027</span></div>
+        </div>
+
+        <div class="offer-title">Offering's</div>
+        <ul class="offer-list">
+          <li>Live classes, 3 sessions a week</li>
+          <li>Pre-batch one-on-one meeting with your tutor</li>
+          <li>Direct WhatsApp access for doubts</li>
+        </ul>
+
+        <div class="subject-badge">Subject Offered — Accountancy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faculty">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Faculty</div>
+      <h2>Meet your tutor</h2>
+      <p>You'll learn directly from one tutor for the full course — not a rotating cast of instructors.</p>
+    </div>
+    <div class="faculty-card lift reveal">
+      <div class="faculty">
+        <div class="faculty-avatar">SI</div>
+        <div>
+          <div class="faculty-name-row">
+            <h3>Shweta Iyengar</h3>
+          </div>
+          <span class="role">Mumbai · Chartered Accountant &amp; CFA Charterholder</span>
+
+          <div class="faculty-stats">
+            <div class="faculty-stat"><span class="num">15+</span><span class="lbl">Years in industry</span></div>
+            <div class="faculty-stat"><span class="num">5</span><span class="lbl">Years teaching</span></div>
+            <div class="faculty-stat"><span class="num">3</span><span class="lbl">Professional credentials</span></div>
+          </div>
+
+          <p>A Chartered Accountant from India, awarded the CFA Charter by the CFA Institute (USA) and Level 4 certification from CISI (UK). Over 15 years of industry experience in leading investment and portfolio management firms across Mumbai, Bangalore, and the UK. Alongside work, she taught accountancy and financial management to students for about five years — and has now moved into teaching full-time, to help students at the start of their accountancy journey.</p>
+
+          <div class="cred-pills">
+            <span class="cred-pill">Chartered Accountant, India</span>
+            <span class="cred-pill">CFA Charter, CFA Institute (USA)</span>
+            <span class="cred-pill">Level 4 Certification, CISI (UK)</span>
+            <span class="cred-pill">15+ yrs Investment &amp; Portfolio Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center; align-items:center;">
+      <div class="eyebrow" style="justify-content:center;">Pricing</div>
+      <h2>One simple plan</h2>
+      <p>A single monthly fee — no separate registration cost or hidden add-ons.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card lift">
+        <div class="price-ribbon">Most popular</div>
+        <div class="eyebrow">CBSE Grade 11 Accountancy</div>
+        <div class="price-amount">₹6,500<span>/month</span></div>
+        <div class="price-sub">Payable at the beginning of each month</div>
+        <ul class="price-features">
+          <li>Live classes, 3 sessions a week</li>
+          <li>Pre-batch one-on-one with your tutor</li>
+          <li>Choice of Batch 1 (Mon/Wed/Fri) or Batch 2 (TBA)</li>
+          <li>Direct WhatsApp access for doubts</li>
+        </ul>
+        <a href="#get-started" class="btn btn-primary">Enroll now</a>
+      </div>
+      <div class="pricing-why lift">
+        <h3>Why families choose this plan</h3>
+        <div class="why-row">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-3.4 3-5.2 5.5-5.2s4.9 1.8 5.5 5.2"/><circle cx="17" cy="9" r="2.6"/><path d="M15.8 14.2c1.9.3 3.5 1.8 4 4.4"/></svg>
+          </div>
+          <div>
+            <div class="why-title">Small live batches</div>
+            <div class="why-sub">Not a pre-recorded course — real-time classes with room for questions.</div>
+          </div>
+        </div>
+        <div class="why-row">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2" fill="#1B3B6F"/></svg>
+          </div>
+          <div>
+            <div class="why-title">One tutor, start to finish</div>
+            <div class="why-sub">Shweta teaches every session — no rotating faculty.</div>
+          </div>
+        </div>
+        <div class="why-row">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.2"/><line x1="2.5" y1="10" x2="21.5" y2="10"/><line x1="6" y1="14.5" x2="10" y2="14.5"/></svg>
+          </div>
+          <div>
+            <div class="why-title">No lock-in</div>
+            <div class="why-sub">Simple monthly billing — pay as you go, cancel anytime.</div>
+          </div>
+        </div>
+        <div class="why-row">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3B6F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h4l1.5 4.5-2.3 1.8a12 12 0 0 0 5.5 5.5l1.8-2.3L21 14v4a2 2 0 0 1-2.2 2C10.8 19.6 4.4 13.2 4 6.2A2 2 0 0 1 6 3z"/></svg>
+          </div>
+          <div>
+            <div class="why-title">Direct tutor access</div>
+            <div class="why-sub">WhatsApp support for doubts between classes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features-section">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center; align-items:center;">
+      <div class="eyebrow" style="justify-content:center;">Features</div>
+      <h2>Everything included, at a glance</h2>
+    </div>
+
+    <div class="features-card lift reveal">
+      <div class="plan-pill-row">
+        <div class="plan-pill">CBSE Grade 11 Accountancy</div>
+      </div>
+
+      <div class="features-table-head">
+        <div class="col-label">What you get</div>
+        <div class="col-plan">₹6,500 / month</div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-name">Live classes, 3 sessions a week</div>
+        <div class="feature-check"><span class="dot">✓</span></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">Choice of Batch 1 (Mon/Wed/Fri, 7–8:30 PM) or Batch 2 (TBA)</div>
+        <div class="feature-check"><span class="dot">✓</span></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">Pre-batch one-on-one meeting with your tutor</div>
+        <div class="feature-check"><span class="dot">✓</span></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">Direct WhatsApp access for doubts</div>
+        <div class="feature-check"><span class="dot">✓</span></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">Taught by a Chartered Accountant &amp; CFA charterholder</div>
+        <div class="feature-check"><span class="dot">✓</span></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">Simple monthly billing, payable at the start of the month</div>
+        <div class="feature-check"><span class="dot">✓</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="logo"><span class="logo-mark"></span>Svadhyaya Institute</div>
+    <div class="footer-links">
+      <a href="#about-batch">About the Batch</a>
+      <a href="#faculty">Faculty</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#features">Features</a>
+      <a href="#get-started">Enroll</a>
+    </div>
+    <div class="copyright">© 2026 Svadhyaya Institute</div>
+  </div>
+</footer>
+
+<script>
+  // Header shadow on scroll
+  var headerEl = document.querySelector('header');
+  window.addEventListener('scroll', function(){
+    headerEl.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', function(){
+    var isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.getElementById('heroForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    // Integration point: send this data to your backend, email service, or CRM.
+    var data = {
+      studentName: document.getElementById('hName').value,
+      phone: document.getElementById('hPhone').value,
+      batch: document.getElementById('hBatch').value
+    };
+    console.log('Callback request:', data);
+    document.getElementById('heroSuccessMsg').style.display = 'block';
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>
